@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './schedule.css';
 
-export default function TeacherSchedule() {
+function TeacherSchedule() {
   const [currentDay, setCurrentDay] = useState('Monday');
   
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
@@ -121,3 +122,4 @@ export default function TeacherSchedule() {
     </div>
   );
 }
+export default TeacherSchedule

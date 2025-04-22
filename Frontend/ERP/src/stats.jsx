@@ -1,6 +1,7 @@
 import { Clock, ArrowLeft } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import "./stats.css";
+import { Navigate } from "react-router-dom";
 
 // Sample teacher data for Mr. John Doe
 const teacherData = {
@@ -9,7 +10,7 @@ const teacherData = {
   avatar: "👨‍🏫",
   weeklyStats: {
     logged: 27.5,
-    weeklyRequirement: 40,
+    weeklyRequirement: 30,
     pending: 12.5,
     workingDays: 5,
     punchData: [
@@ -47,6 +48,7 @@ function TeacherTimeTracking() {
   const BackHome = () => {
     // Replace with actual navigation logic
     console.log("Navigate back to Dashboard");
+    Navigate(-1);
   };
 
   return (

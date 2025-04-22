@@ -1,0 +1,107 @@
+/* schedule.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fafc; /* Light gray background */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container for the schedule */
+  .bg-gray-100 {
+    background-color: #f7fafc; /* Light gray */
+  }
+  
+  /* Card Styles */
+  .bg-white {
+    background-color: #ffffff; /* White */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Title Styles */
+  .text-blue-800 {
+    color: #2b6cb0; /* Dark blue */
+  }
+  
+  /* Button Styles */
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.375rem; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .bg-blue-600 {
+    background-color: #3182ce; /* Blue */
+  }
+  
+  .bg-gray-200 {
+    background-color: #edf2f7; /* Light gray */
+  }
+  
+  .bg-gray-300 {
+    background-color: #e2e8f0; /* Slightly darker gray */
+  }
+  
+  .bg-blue-100 {
+    background-color: #ebf8ff; /* Light blue */
+  }
+  
+  .bg-green-100 {
+    background-color: #c6f6d5; /* Light green */
+  }
+  
+  .bg-yellow-100 {
+    background-color: #fefcbf; /* Light yellow */
+  }
+  
+  /* Schedule Item Styles */
+  .p-3 {
+    padding: 0.75rem; /* Padding for schedule items */
+  }
+  
+  .font-medium {
+    font-weight: 500; /* Medium font weight */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Semibold font weight */
+  }
+  
+  .text-gray-800 {
+    color: #2d3748; /* Dark gray */
+  }
+  
+  .text-gray-600 {
+    color: #718096; /* Medium gray */
+  }
+  
+  /* Legend Styles */
+  .mt-6 {
+    margin-top: 1.5rem; /* Margin for spacing */
+  }
+  
+  .bg-blue-50 {
+    background-color: #ebf8ff; /* Light blue for legend */
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 640px) {
+    .sm\:flex {
+      display: flex; /* Flexbox for small screens and up */
+    }
+  
+    .sm\:justify-between {
+      justify-content: space-between; /* Space between items */
+    }
+  
+    .sm\:items-center {
+      align-items: center; /* Center items vertically */
+    }
+  
+    .sm\:mb-0 {
+      margin-bottom: 0; /* Remove bottom margin on small screens */
+    }
+  }

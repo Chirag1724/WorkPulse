@@ -18,6 +18,9 @@ function Dashboard() {
   const goTostats = () => {
     navigate('/stats');
   }
+  const goToSchedule = () => {
+    navigate('/schedule');
+  }
 
   return (
     <div className="container">
@@ -117,7 +120,7 @@ function Dashboard() {
               <div className="option-icon">📅</div>
               <h3>Schedule</h3>
               <p>View and manage your upcoming schedule</p>
-              <button className="option-btn">View</button>
+              <button className="option-btn" onClick={goToSchedule}>View</button>
             </div>
           </div>
         </div>

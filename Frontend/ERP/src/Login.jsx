@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { User, Lock, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './first.css';
 
 export default function FacultyLogin() {
@@ -11,6 +12,7 @@ export default function FacultyLogin() {
   // Hardcoded credentials as specified
   const validUserId = '24041536';
   const validPassword = 'Chirag@24';
+  const navigate = useNavigate();
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ export default function FacultyLogin() {
     if (userId === validUserId && password === validPassword) {
       setLoggedIn(true);
       setError('');
+      navigate('/Dashboard');
     } else {
       setError('Invalid user ID or password. Please try again.');
     }
@@ -137,18 +140,9 @@ export default function FacultyLogin() {
           </div>
         </div>
       ) : (
-        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
-          <div className="bg-green-100 rounded-full p-6 mx-auto w-24 h-24 flex items-center justify-center mb-6">
-            <User size={36} className="text-green-600" />
-          </div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Welcome, Faculty!</h1>
-          <p className="text-gray-600 mb-6">You have successfully logged in to the faculty portal.</p>
-          <button
-            onClick={() => setLoggedIn(false)}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Sign Out
-          </button>
+        <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+          <p className="text-gray-800 mb-4">Login successful!</p>
+          <p className="text-gray-500">Redirecting to dashboard...</p>
         </div>
       )}
     </div>
