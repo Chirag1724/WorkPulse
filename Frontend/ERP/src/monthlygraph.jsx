@@ -167,4 +167,4 @@ function Graph() {
     </div>
   );
 }
-export default Graph
+export default Graph;
