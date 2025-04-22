@@ -1,14 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 // import './App.css'
-import FacultyDashboard from '../Dasboard'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from '../Dasboard'
+import Graph from './monthlygraph'
+ 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return(
-    <FacultyDashboard/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/monthly-graph" element={<Graph />} />
+      </Routes>
+    </Router>
   )
 
   } 

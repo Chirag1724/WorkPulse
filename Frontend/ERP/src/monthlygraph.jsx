@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { Clock, Calendar, CheckCircle, XCircle, Award } from 'lucide-react';
+import './graph.css';
 
 // Sample data for a teacher's working hours
 const monthlyData = [
@@ -25,7 +26,7 @@ const completedMonths = monthlyData.filter(month => month.status === 'completed'
 const undercompletedMonths = monthlyData.filter(month => month.status === 'undercompleted').length;
 const complianceRate = Math.round((completedMonths / monthlyData.length) * 100);
 
-export default function TeacherHoursVisualization() {
+function Graph() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
   
@@ -166,3 +167,4 @@ export default function TeacherHoursVisualization() {
     </div>
   );
 }
+export default Graph
