@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import './index.css';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   const [punchedIn, setPunchedIn] = useState(false);
   const [progress, setProgress] = useState(60); // Example progress
+  const navigate = useNavigate(); 
+
 
   const handlePunch = () => {
     setPunchedIn(!punchedIn);
     setProgress(punchedIn ? 60 : 90); // Example progress logic
+  };
+  const goToMonthlyGraph = () => {
+    navigate('/monthly-graph'); // Navigate to the '/monthly-graph' route
   };
 
   return (
@@ -75,19 +81,40 @@ function Dashboard() {
           <div className="calendar">
             <h3>April 2025</h3>
             <div className="calendar-grid">
-              {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d) => (
-                <div key={d}>{d}</div>
+              {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
+                <div key={`${d}-${i}`}>{d}</div>
               ))}
+
               {Array.from({ length: 30 }, (_, i) => (
                 <div
                   key={i}
-                  className={`calendar-day ${
-                    i + 1 === 22 ? 'current' : ''
-                  }`}
+                  className={`calendar-day ${i + 1 === 22 ? 'current' : ''
+                    }`}
                 >
                   {i + 1}
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="options-section">
+            <div className="option-box">
+              <div className="option-icon">📊</div>
+              <h3>View Stats</h3>
+              <p>Check attendance and performance statistics</p>
+              <button className="option-btn" onClick={goToMonthlyGraph}>View</button>
+            </div>
+            <div className="option-box">
+              <div className="option-icon">📈</div>
+              <h3>Graphs</h3>
+              <p>Visual representation of your work trends</p>
+              <button className="option-btn">View</button>
+            </div>
+            <div className="option-box">
+              <div className="option-icon">📅</div>
+              <h3>Schedule</h3>
+              <p>View and manage your upcoming schedule</p>
+              <button className="option-btn">View</button>
             </div>
           </div>
         </div>
