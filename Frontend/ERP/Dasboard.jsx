@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import { useNavigate } from 'react-router-dom';
 
+
 function Dashboard() {
   const [punchedIn, setPunchedIn] = useState(false);
   const [progress, setProgress] = useState(60); // Example progress
@@ -85,24 +86,53 @@ function Dashboard() {
           </div>
 
           <div className="calendar">
-            <h3>April 2025</h3>
-            <div className="calendar-grid">
-              {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
-                <div key={`${d}-${i}`}>{d}</div>
-              ))}
-
-              {Array.from({ length: 30 }, (_, i) => (
-                <div
-                  key={i}
-                  className={`calendar-day ${i + 1 === 22 ? 'current' : ''
-                    }`}
-                >
-                  {i + 1}
-                </div>
-              ))}
-            </div>
+  {/* Dynamic month and year heading */}
+  <h3>{new Date().toLocaleString('default', { month: 'long' })} {new Date().getFullYear()}</h3>
+  <div className="calendar-grid">
+    {/* Days of week headers */}
+    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
+      <div key={`${d}-${i}`}>{d}</div>
+    ))}
+    
+    {(() => {
+      // Get current date information
+      const currentDate = new Date();
+      const currentDay = currentDate.getDate();
+      const currentMonth = currentDate.getMonth();
+      const currentYear = currentDate.getFullYear();
+      
+      // Get first day of the month (0 = Sunday, 1 = Monday, etc.)
+      const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+      
+      // Get total days in current month
+      const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      
+      // Create array to hold all calendar cells
+      const calendarCells = [];
+      
+      // Add empty cells for days before the 1st of the month
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        calendarCells.push(
+          <div key={`empty-${i}`} className="calendar-day empty"></div>
+        );
+      }
+      
+      // Add cells for each day of the month
+      for (let day = 1; day <= lastDayOfMonth; day++) {
+        calendarCells.push(
+          <div 
+            key={`day-${day}`}
+            className={`calendar-day ${day === currentDay ? 'current' : ''}`}
+          >
+            {day}
           </div>
-
+        );
+      }
+      
+      return calendarCells;
+    })()}
+  </div>
+</div>
           <div className="options-section">
             <div className="option-box">
               <div className="option-icon">📈</div>
