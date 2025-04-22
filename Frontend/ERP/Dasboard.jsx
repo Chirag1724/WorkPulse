@@ -12,8 +12,8 @@ function Dashboard() {
     setPunchedIn(!punchedIn);
     setProgress(punchedIn ? 60 : 90); // Example progress logic
   };
-  const goToMonthlyGraph = () => {
-    navigate('/monthly-graph'); // Navigate to the '/monthly-graph' route
+  const goToWeeklyGraph = () => {
+    navigate('/weekly-graph');
   };
 
   return (
@@ -102,7 +102,7 @@ function Dashboard() {
               <div className="option-icon">📊</div>
               <h3>View Stats</h3>
               <p>Check attendance and performance statistics</p>
-              <button className="option-btn" onClick={goToMonthlyGraph}>View</button>
+              <button className="option-btn" onClick={goToWeeklyGraph}>View</button>
             </div>
             <div className="option-box">
               <div className="option-icon">📈</div>
