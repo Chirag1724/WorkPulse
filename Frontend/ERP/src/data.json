@@ -1,0 +1,44 @@
+{
+    "weekly": [
+      { "day": "Mon", "hours": 6 },
+      { "day": "Tue", "hours": 8 },
+      { "day": "Wed", "hours": 7 },
+      { "day": "Thu", "hours": 9 },
+      { "day": "Fri", "hours": 5 },
+      { "day": "Sat", "hours": 4 },
+      { "day": "Sun", "hours": 0 }
+    ],
+    "monthly": [
+      { "month": "January", "required": 160, "actual": 165 },
+      { "month": "February", "required": 152, "actual": 148 },
+      { "month": "March", "required": 168, "actual": 172 },
+      { "month": "April", "required": 160, "actual": 155 },
+      { "month": "May", "required": 168, "actual": 175 },
+      { "month": "June", "required": 152, "actual": 158 },
+      { "month": "July", "required": 128, "actual": 110 },
+      { "month": "August", "required": 136, "actual": 142 },
+      { "month": "September", "required": 160, "actual": 168 },
+      { "month": "October", "required": 168, "actual": 170 },
+      { "month": "November", "required": 152, "actual": 145 },
+      { "month": "December", "required": 144, "actual": 150 }
+    ],
+    "teacherStats": {
+      "name": "Mr. John Doe",
+      "subject": "Mathematics",
+      "avatar": "👨‍🏫",
+      "weeklyStats": {
+        "logged": 27.5,
+        "weeklyRequirement": 30,
+        "pending": 12.5,
+        "workingDays": 5,
+        "punchData": [
+          { "day": "Monday", "in": "07:45", "out": "15:30", "classes": 5 },
+          { "day": "Tuesday", "in": "10:00", "out": "16:15", "classes": 4 },
+          { "day": "Wednesday", "in": "07:30", "out": "15:45", "classes": 6 },
+          { "day": "Thursday", "in": "", "out": "", "classes": 5 },
+          { "day": "Friday", "in": "", "out": "", "classes": 4 }
+        ]
+      }
+    }
+  }
+  
