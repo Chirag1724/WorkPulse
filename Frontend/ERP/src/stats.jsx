@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./stats.css";
 import { Navigate } from "react-router-dom";
 
-// Sample teacher data for Mr. John Doe
 const teacherData = {
   name: "Mr. John Doe",
   subject: "Mathematics",
@@ -11,7 +10,7 @@ const teacherData = {
   weeklyStats: {
     logged: 27.5,
     weeklyRequirement: 30,
-    pending: 12.5,
+    pending: 3.5,
     workingDays: 5,
     punchData: [
       { day: "Monday", in: "07:45", out: "15:30", classes: 5 },
@@ -23,7 +22,7 @@ const teacherData = {
   }
 };
 
-// Helper function to format hours from decimal to hours and minutes
+
 function formatHours(decimalHours) {
   const h = Math.floor(decimalHours);
   const m = Math.round((decimalHours - h) * 60);
@@ -39,14 +38,11 @@ function TeacherTimeTracking() {
   const remainingWorkDays = weeklyStats.punchData.filter(day => !day.in).length;
   const perDay = remainingWorkDays > 0 ? neededMore / remainingWorkDays : 0;
 
-  // Animation effect on page load
   useEffect(() => {
     setIsPageLoaded(true);
   }, []);
 
-  // Handle back button click
   const BackHome = () => {
-    // Replace with actual navigation logic
     console.log("Navigate back to Dashboard");
     Navigate(-1);
   };
