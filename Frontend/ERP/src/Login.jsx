@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './first.css'
 
-export default function Login() {
+function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
@@ -77,3 +78,4 @@ export default function Login() {
     </section>
   );
 }
+export default Login

@@ -15,6 +15,9 @@ function Dashboard() {
   const goToWeeklyGraph = () => {
     navigate('/weekly-graph');
   };
+  const goTostats = () => {
+    navigate('/stats');
+  }
 
   return (
     <div className="container">
@@ -99,16 +102,16 @@ function Dashboard() {
 
           <div className="options-section">
             <div className="option-box">
-              <div className="option-icon">📊</div>
-              <h3>View Stats</h3>
+              <div className="option-icon">📈</div>
+              <h3>View Graphs</h3>
               <p>Check attendance and performance statistics</p>
               <button className="option-btn" onClick={goToWeeklyGraph}>View</button>
             </div>
             <div className="option-box">
-              <div className="option-icon">📈</div>
-              <h3>Graphs</h3>
+              <div className="option-icon">📊</div>
+              <h3>stats</h3>
               <p>Visual representation of your work trends</p>
-              <button className="option-btn">View</button>
+              <button className="option-btn" onClick={goTostats}>View</button>
             </div>
             <div className="option-box">
               <div className="option-icon">📅</div>
