@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from '../Dasboard'
 import Graph from './monthlygraph'
 import WeeklyGraph from './weeklygraph';
- 
+import Login from './Login';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +12,8 @@ function App() {
   return(
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/weekly-graph" element={<WeeklyGraph/>}/>
         <Route path="/monthly-graph" element={<Graph />} />
       </Routes>
@@ -20,5 +21,5 @@ function App() {
   )
 
   } 
-
+  
 export default App
