@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Clock, ArrowLeft, Calendar, UserCircle, Book, CheckCircle } from "lucide-react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./stats.css";
 import data from "./data.json"; // Import data - this will re-render when data changes
 
@@ -45,10 +45,9 @@ function TeacherTimeTracking() {
     // Animation effect on page load
     setIsPageLoaded(true);
   }, [data]); // Re-run this effect if data changes
-
-  const BackHome = () => {
-    console.log("Navigate back to Dashboard");
-    Navigate(-1);
+  const navigate = useNavigate();
+  const BackHome = () => {;
+    navigate(-1);
   };
   
 

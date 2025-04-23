@@ -1,3 +1,43 @@
+<<<<<<< HEAD
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .card {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 10px 0;
+  }
+  .action-button.in {
+    background: green;
+    color: white;
+  }
+  .action-button.out {
+    background: red;
+    color: white;
+  }
+  .status-in { color: green; }
+  .status-out { color: red; }
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+=======
 /* PunchIn Component Styles */
 :root {
   --dark-blue: #0A1123;
@@ -248,6 +288,7 @@
   0% {
     opacity: 1;
     transform: scale(1);
+>>>>>>> f0990c95dcd34d9d3e8103652a34a4b6f7846247
   }
   50% {
     opacity: 0.6;
