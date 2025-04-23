@@ -13,6 +13,7 @@ import {
 import { Clock, CheckCircle, XCircle, Award, ArrowLeft } from 'lucide-react';
 import './weekly.css';
 
+
 // Static data
 const weeklyData = [
   { day: 'Mon', required: 6, actual: 6 },

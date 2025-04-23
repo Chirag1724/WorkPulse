@@ -39,7 +39,7 @@ function Graph() {
   
   const handleBackClick = () => {
     // Navigate to faculty dashboard
-    window.location.href = '/dashboard';
+    window.location.href = '/faculty-dashboard';
   };
 
   return (
