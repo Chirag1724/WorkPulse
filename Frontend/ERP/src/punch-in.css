@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container {
     max-width: 960px;
     margin: auto;
@@ -36,5 +37,265 @@
     background: white;
     padding: 20px;
     border-radius: 8px;
+=======
+/* PunchIn Component Styles */
+:root {
+  --dark-blue: #0A1123;
+  --primary-purple: #8387C4;
+  --light-purple: #898CAB;
+  --accent-purple: #8387C4;
+}
+
+.punch-in-container {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(10, 17, 35, 0.15);
+  border: 1px solid rgba(131, 135, 196, 0.2);
+}
+
+.punch-in-header {
+  color: var(--dark-blue);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.punch-in-header svg {
+  color: var(--primary-purple);
+  margin-right: 0.5rem;
+}
+
+.current-time-display {
+  font-family: monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+  background-color: rgba(131, 135, 196, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--dark-blue);
+}
+
+.form-label svg {
+  color: var(--primary-purple);
+}
+
+.target-select, .hours-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--light-purple);
+  border-radius: 0.375rem;
+  background-color: white;
+  color: var(--dark-blue);
+  transition: border-color 0.2s ease;
+}
+
+.target-select:focus, .hours-input:focus {
+  outline: none;
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 2px rgba(131, 135, 196, 0.2);
+}
+
+.target-select:disabled, .hours-input:disabled {
+  background-color: rgba(137, 140, 171, 0.1);
+  cursor: not-allowed;
+}
+
+.elapsed-time-container {
+  margin-bottom: 1rem;
+}
+
+.elapsed-time-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: var(--dark-blue);
+}
+
+.elapsed-time-display {
+  font-family: monospace;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.75rem;
+  background-color: rgba(131, 135, 196, 0.15);
+  border-radius: 0.375rem;
+  color: var(--dark-blue);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.clock-in-button {
+  background-color: var(--primary-purple);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.clock-in-button:hover {
+  background-color: #7277b8;
+}
+
+.clock-out-button {
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.clock-out-button:hover {
+  background-color: #131b33;
+}
+
+.button-icon {
+  margin-right: 0.5rem;
+}
+
+.status-indicator {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--primary-purple);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.status-text {
+  font-size: 0.875rem;
+  color: var(--dark-blue);
+}
+
+.status-time {
+  font-size: 0.75rem;
+  color: var(--light-purple);
+  margin-top: 0.25rem;
+}
+
+/* Confirmation Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 17, 35, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(10, 17, 35, 0.2);
+  max-width: 24rem;
+  width: 100%;
+  border: 1px solid rgba(131, 135, 196, 0.3);
+}
+
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+.modal-text {
+  margin-bottom: 1.5rem;
+  color: var(--light-purple);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--light-purple);
+  border-radius: 0.375rem;
+  color: var(--dark-blue);
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: rgba(137, 140, 171, 0.1);
+}
+
+.confirm-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.confirm-clock-in {
+  background-color: var(--primary-purple);
+}
+
+.confirm-clock-in:hover {
+  background-color: #7277b8;
+}
+
+.confirm-clock-out {
+  background-color: var(--dark-blue);
+}
+
+.confirm-clock-out:hover {
+  background-color: #131b33;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+>>>>>>> f0990c95dcd34d9d3e8103652a34a4b6f7846247
   }
-  
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
