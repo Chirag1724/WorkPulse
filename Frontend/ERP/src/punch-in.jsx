@@ -17,12 +17,12 @@ const PunchIn = () => {
   
   // Work target options
   const workTargets = [
-    'Project Alpha Development',
-    'Client Meeting Preparation',
-    'Documentation',
-    'Bug Fixing',
-    'Team Collaboration',
-    'Training & Learning'
+    'Lecture',
+    'Break',
+    'Meeting',
+    'Club Work',
+    'Seminars',
+    'Other'
   ];
   
   // Update clock every second
