@@ -269,3 +269,43 @@
       font-size: 0.75rem;
     }
   }
+  .circular-progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .circular-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #d1e5e7;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .progress-inner {
+    width: 85px;
+    height: 85px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .progress-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0d9488;
+  }
+  
+  .progress-text {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: #334155; /* slate-700 */
+  }
+  

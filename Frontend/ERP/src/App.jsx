@@ -7,7 +7,8 @@ import WeeklyGraph from './weeklygraph';
 import Login from './Login';
 import TeacherTimeTracking from './stats';
 import TeacherSchedule from './schedule';
-import FacultyERPSystem from './punch-in';
+// import FacultyERPSystem from './punch-in';
+import PunchInSystem from './punch-in';
  
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         <Route path="/monthly-graph" element={<Graph />} />
         <Route path='/stats' element={<TeacherTimeTracking />}/>
         <Route path='/schedule' element={<TeacherSchedule />}/>
-        <Route path='/punch-in' element={<FacultyERPSystem/>}/>
+        <Route path='/punch-in' element={<PunchInSystem/>}/>
       </Routes>
     </Router>
   )
