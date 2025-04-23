@@ -116,7 +116,6 @@ function FacultyLogin() {
             </div>
           </form>
           
-          
           <div className="social-login">
             <p>Or With</p>
             <div className="social-buttons">
