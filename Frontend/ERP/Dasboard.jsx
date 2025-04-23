@@ -22,6 +22,9 @@ function Dashboard() {
   const goToSchedule = () => {
     navigate('/schedule');
   }
+  const punchIn = () => {
+    navigate('/punch-in');
+  }
 
   return (
     <div className="container">
@@ -70,7 +73,7 @@ function Dashboard() {
 
           <button
             className={`punch-btn ${punchedIn ? 'punch-out' : 'punch-in'}`}
-            onClick={handlePunch}
+            onClick={punchIn}
           >
             {punchedIn ? 'Punch Out' : 'Punch In'}
           </button>

@@ -3,7 +3,7 @@ import { User, Lock, Eye, Twitter } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-export default function FacultyLogin() {
+function FacultyLogin() {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -116,7 +116,10 @@ export default function FacultyLogin() {
             </div>
           </form>
           
+<<<<<<< HEAD
           
+=======
+>>>>>>> c4e2708ecb443fc69707f25515a6543e340201df
           <div className="social-login">
             <p>Or With</p>
             <div className="social-buttons">
@@ -168,3 +171,4 @@ export default function FacultyLogin() {
     </div>
   );
 }
+export default FacultyLogin

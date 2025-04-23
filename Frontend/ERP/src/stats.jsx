@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import "./stats.css";
 import data from "./data.json"; // Import data - this will re-render when data changes
 
-// Helper function to format hours from decimal to hours and minutes
+// ✅ Move this function here
 function formatHours(decimalHours) {
   const h = Math.floor(decimalHours);
   const m = Math.round((decimalHours - h) * 60);
@@ -46,11 +46,11 @@ function TeacherTimeTracking() {
     setIsPageLoaded(true);
   }, [data]); // Re-run this effect if data changes
 
-  // Handle back button click
   const BackHome = () => {
     console.log("Navigate back to Dashboard");
     Navigate(-1);
   };
+  
 
   // Wait for data to be loaded
   if (!teacherData || !weekStats) {
