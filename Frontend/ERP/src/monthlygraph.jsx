@@ -4,8 +4,9 @@ import {
   Legend, ResponsiveContainer, ReferenceLine
 } from 'recharts';
 import { Clock, Calendar, CheckCircle, XCircle, Award, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
 import './graph.css';
-import data from './data.json'; // Make sure this path is correct
+import data from './data.json';
 
 // Prepare data with "status"
 const monthlyData = data.monthly.map(month => ({
@@ -23,6 +24,7 @@ const complianceRate = Math.round((completedMonths / monthlyData.length) * 100);
 function Graph() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
+  const navigate = useNavigate(); // ✅ Get navigate function
 
   useEffect(() => {
     let interval;
@@ -36,10 +38,9 @@ function Graph() {
 
   const handleToggleAnimation = () => setIsAnimating(!isAnimating);
   const animatedData = monthlyData.slice(0, activeIndex + 1);
-  
+
   const handleBackClick = () => {
-    // Navigate to faculty dashboard
-    window.location.href = '/faculty-dashboard';
+    navigate('/dashboard'); // ✅ Use navigate instead of window.location.href
   };
 
   return (
@@ -62,7 +63,7 @@ function Graph() {
           <select
             onChange={(e) => {
               if (e.target.value === 'weekly') {
-                navigate('/weekly-graph');
+                navigate('/weekly-graph'); // ✅ Navigate to weekly view
               }
             }}
             defaultValue="monthly"
