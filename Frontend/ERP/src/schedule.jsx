@@ -59,67 +59,116 @@ function TeacherSchedule() {
     ],
   };
 
-  return (
-    <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-center mb-6 text-blue-800">Teacher's Weekly Schedule</h1>
+  // Get icons for each activity type
+  const getActivityIcon = (activity) => {
+    if (activity.includes('Teaching')) return '📚';
+    if (activity.includes('Break') || activity.includes('Lunch')) return '☕';
+    if (activity.includes('Meeting') || activity.includes('Conference')) return '👥';
+    if (activity.includes('Office') || activity.includes('Hours')) return '🕒';
+    if (activity.includes('Planning') || activity.includes('Development')) return '📝';
+    if (activity.includes('Grading')) return '✅';
+    if (activity.includes('Preparation')) return '⏰';
+    if (activity.includes('Club')) return '🏆';
+    return '📋';
+  };
+
+  // Get current time to highlight current activity
+  const getCurrentTimeSlot = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const currentTime = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+    
+    // Convert time format like "7:30 AM - 8:00 AM" to 24-hour format for comparison
+    return (timeString) => {
+      const [startTime, endTime] = timeString.split(' - ');
       
-      <div className="flex justify-center mb-6 flex-wrap">
-        {days.map(day => (
-          <button
-            key={day}
-            onClick={() => setCurrentDay(day)}
-            className={`px-4 py-2 m-1 rounded-md ${
-              currentDay === day 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-200 hover:bg-gray-300'
-            }`}
-          >
-            {day}
-          </button>
-        ))}
+      const parseTime = (time) => {
+        const [hourMin, period] = time.split(' ');
+        let [hour, minute] = hourMin.split(':').map(num => parseInt(num, 10));
+        
+        if (period === 'PM' && hour !== 12) hour += 12;
+        if (period === 'AM' && hour === 12) hour = 0;
+        
+        return `${hour}:${minute < 10 ? '0' + minute : minute}`;
+      };
+      
+      const start = parseTime(startTime);
+      const end = parseTime(endTime);
+      
+      return currentTime >= start && currentTime <= end;
+    };
+  };
+
+  const isCurrentTimeSlot = getCurrentTimeSlot();
+
+  return (
+    <div className="dashboard-container">
+      <div className="schedule-header">
+        <div className="logo-container">
+          <div className="logo">EduTrack</div>
+          <div className="tagline">Teacher Schedule Dashboard</div>
+        </div>
+        <div className="day-selector">
+          {days.map(day => (
+            <button
+              key={day}
+              onClick={() => setCurrentDay(day)}
+              className={`day-btn ${currentDay === day ? 'active' : ''}`}
+            >
+              {day.substring(0, 3)}
+            </button>
+          ))}
+        </div>
       </div>
       
-      <div className="bg-white rounded-lg shadow p-4">
-        <h2 className="text-xl font-semibold mb-4 text-center text-blue-700">{currentDay}'s Schedule</h2>
+      <div className="schedule-content">
+        <div className="date-display">
+          <div className="day-name">{currentDay}</div>
+          <div className="day-date">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</div>
+        </div>
         
-        <div className="space-y-3">
+        <div className="timeline">
           {scheduleData[currentDay].map((item, index) => (
             <div 
               key={index} 
-              className={`p-3 rounded-md ${
-                item.activity.includes('Break') ? 'bg-green-100' : 
-                item.activity.includes('Meeting') || item.activity.includes('Development') || item.activity.includes('Planning') ? 'bg-yellow-100' :
-                item.activity.includes('Teaching') ? 'bg-blue-100' : 'bg-gray-100'
-              }`}
+              className={`schedule-item ${isCurrentTimeSlot(item.time) ? 'current-activity' : ''}`}
             >
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                <div className="font-medium text-gray-800 mb-1 sm:mb-0">{item.time}</div>
-                <div className="font-semibold">{item.activity}</div>
-                <div className="text-gray-600 text-sm mt-1 sm:mt-0">{item.location}</div>
+              <div className="time-block">{item.time}</div>
+              <div className="activity-block">
+                <div className="activity-icon">{getActivityIcon(item.activity)}</div>
+                <div className="activity-details">
+                  <div className="activity-name">{item.activity}</div>
+                  <div className="activity-location">{item.location}</div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
       
-      <div className="mt-6 bg-blue-50 p-4 rounded-md">
-        <h3 className="font-semibold text-blue-800 mb-2">Legend:</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-blue-100 rounded mr-2"></div>
-            <span className="text-sm">Teaching Periods</span>
+      <div className="schedule-footer">
+        <div className="legend">
+          <div className="legend-item">
+            <span className="legend-icon">📚</span>
+            <span>Teaching</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-green-100 rounded mr-2"></div>
-            <span className="text-sm">Breaks</span>
+          <div className="legend-item">
+            <span className="legend-icon">☕</span>
+            <span>Break</span>
           </div>
-          <div className="flex items-center">
-            <div className="w-4 h-4 bg-yellow-100 rounded mr-2"></div>
-            <span className="text-sm">Meetings & Planning</span>
+          <div className="legend-item">
+            <span className="legend-icon">👥</span>
+            <span>Meetings</span>
+          </div>
+          <div className="legend-item">
+            <span className="legend-icon">📝</span>
+            <span>Planning</span>
           </div>
         </div>
       </div>
     </div>
   );
 }
-export default TeacherSchedule
+
+export default TeacherSchedule;

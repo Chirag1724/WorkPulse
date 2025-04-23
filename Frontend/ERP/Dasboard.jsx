@@ -44,12 +44,12 @@ function Dashboard() {
           <div className="welcome">
             <div className="photo">
               <img
-                src="https://randomuser.me/api/portraits/men/32.jpg"
+                src="https://megaphone.southwestern.edu/wp-content/uploads/2018/03/birger-kollmeier-910261_960_720.jpg"
                 alt="Profile"
               />
               <div className="status" />
             </div>
-            <h2>Welcome Proff. John!</h2>
+            <h2>Welcome Proff. Sati!</h2>
             <p>Have a productive day at work!</p>
           </div>
 

@@ -116,10 +116,6 @@ export default function FacultyLogin() {
             </div>
           </form>
           
-          <div className="signup-prompt">
-            <p>Don't have an account?</p>
-            <a href="#">Sign Up</a>
-          </div>
           
           <div className="social-login">
             <p>Or With</p>
