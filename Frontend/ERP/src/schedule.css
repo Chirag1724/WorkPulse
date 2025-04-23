@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary-color: #10b981;
-  --accent-color: #8b5cf6;
-  --light-bg: #f8fafc;
-  --dark-text: #1e293b;
-  --light-text: #f1f5f9;
+  --primary-color: #008E9C;
+  --primary-dark: #007A85;
+  --secondary-color: #31CBAF;
+  --accent-color: #008E9C;
+  --light-bg: #E0F7FA;
+  --dark-text: #005057;
+  --light-text: #FFFFFF;
   --gray-text: #64748b;
-  --card-bg: #ffffff;
+  --card-bg: #FFFFFF;
   --border-radius: 12px;
   --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
@@ -33,7 +33,7 @@ body {
 .dashboard-container {
   max-width: 1000px;
   margin: 2rem auto;
-  background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  background: linear-gradient(135deg, #E0F7FA, #d5f3f7);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   overflow: hidden;
@@ -41,7 +41,7 @@ body {
 
 /* Header Styles */
 .schedule-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--light-text);
   padding: 1.5rem;
   display: flex;
@@ -105,7 +105,7 @@ body {
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+  border-bottom: 2px solid rgba(0, 142, 156, 0.2);
 }
 
 .day-name {
@@ -140,7 +140,7 @@ body {
 }
 
 .time-block {
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: rgba(0, 142, 156, 0.1);
   padding: 1rem;
   min-width: 140px;
   font-weight: 500;
@@ -167,7 +167,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: rgba(0, 142, 156, 0.1);
   border-radius: 50%;
 }
 
@@ -188,11 +188,11 @@ body {
 /* Current activity highlight */
 .current-activity {
   border-left: 4px solid var(--secondary-color);
-  background-color: rgba(16, 185, 129, 0.05);
+  background-color: rgba(49, 203, 175, 0.05);
 }
 
 .current-activity .time-block {
-  background-color: rgba(16, 185, 129, 0.1);
+  background-color: rgba(49, 203, 175, 0.1);
   color: var(--secondary-color);
 }
 
@@ -214,7 +214,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  color: var(--gray-text);
+  color: var(--dark-text);
 }
 
 .legend-icon {
@@ -263,13 +263,13 @@ body {
 /* Animation for current activity */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 0 0 rgba(49, 203, 175, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 10px rgba(49, 203, 175, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    box-shadow: 0 0 0 0 rgba(49, 203, 175, 0);
   }
 }
 

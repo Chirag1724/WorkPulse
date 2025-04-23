@@ -14,7 +14,7 @@ function Dashboard() {
     if (hour < 12) setGreeting('Good Morning');
     else if (hour < 17) setGreeting('Good Afternoon');
     else setGreeting('Good Evening');
-    
+
     // Subtle animation effect for dashboard load
     const dashboard = document.querySelector('.dashboard');
     if (dashboard) {
@@ -26,19 +26,19 @@ function Dashboard() {
     setPunchedIn(!punchedIn);
     setProgress(punchedIn ? 60 : 90);
   };
-  
+
   const goToWeeklyGraph = () => {
     navigate('/weekly-graph');
   };
-  
+
   const goTostats = () => {
     navigate('/stats');
   };
-  
+
   const goToSchedule = () => {
     navigate('/schedule');
   };
-  
+
   const punchIn = () => {
     navigate('/punch-in');
   };
@@ -94,7 +94,7 @@ function Dashboard() {
                 <div className="status-indicator online" />
               </div>
               <div className="welcome-text">
-                <h2>{greeting}, Prof. Sati!</h2>
+                <h2>{greeting}, Prof. M.M. Sati!</h2>
                 <p>Have a productive day at work!</p>
               </div>
               <button
@@ -158,37 +158,37 @@ function Dashboard() {
                     {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => (
                       <div key={`${d}-${i}`} className="day-header">{d}</div>
                     ))}
-                    
+
                     {(() => {
                       // Get current date information
                       const currentDate = new Date();
                       const currentDay = currentDate.getDate();
                       const currentMonth = currentDate.getMonth();
                       const currentYear = currentDate.getFullYear();
-                      
+
                       // Get first day of the month (0 = Sunday, 1 = Monday, etc.)
                       const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
-                      
+
                       // Get total days in current month
                       const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-                      
+
                       // Create array to hold all calendar cells
                       const calendarCells = [];
-                      
+
                       // Add empty cells for days before the 1st of the month
                       for (let i = 0; i < firstDayOfMonth; i++) {
                         calendarCells.push(
                           <div key={`empty-${i}`} className="calendar-day empty"></div>
                         );
                       }
-                      
+
                       // Add cells for each day of the month
                       for (let day = 1; day <= lastDayOfMonth; day++) {
                         // Add some event indicators randomly
                         const hasEvent = day % 7 === 0 || day % 11 === 0;
-                        
+
                         calendarCells.push(
-                          <div 
+                          <div
                             key={`day-${day}`}
                             className={`calendar-day ${day === currentDay ? 'current' : ''} ${hasEvent ? 'has-event' : ''}`}
                           >
@@ -197,13 +197,13 @@ function Dashboard() {
                           </div>
                         );
                       }
-                      
+
                       return calendarCells;
                     })()}
                   </div>
                 </div>
               </div>
-              
+
               <div className="quick-actions">
                 <div className="section-header">
                   <h3>Quick Actions</h3>

@@ -1,14 +1,14 @@
 /* TeacherTimeTracking.css */
 :root {
-  --primary-dark: #0A1123;
-  --primary-purple: #8387C4;
-  --secondary-purple: #898CAB;
-  --light-bg: #F5F6FA;
+  --primary-dark: #008E9C;
+  --primary-teal: #008E9C;
+  --secondary-teal: #31CBAF;
+  --light-bg: #E0F7FA;
   --white: #FFFFFF;
   --text-dark: #2A2C3A;
   --text-muted: #686A7B;
-  --border-color: #E9EAEF;
-  --success-color: #5DB075;
+  --border-color: #E0F7FA;
+  --success-color: #31CBAF;
   --warning-color: #F2994A;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .stats-container.loading {
-  color: var(--primary-purple);
+  color: var(--primary-teal);
   font-size: 1.25rem;
   font-weight: 500;
 }
@@ -32,7 +32,7 @@
   width: 100%;
   max-width: 1200px;
   background-color: var(--white);
-  box-shadow: 0 8px 30px rgba(10, 17, 35, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 142, 156, 0.1);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -41,7 +41,7 @@
 
 /* Header Section */
 .stats-header {
-  background: linear-gradient(to right, var(--primary-dark), #202A45);
+  background: linear-gradient(to right, var(--primary-dark), #31CBAF);
   position: relative;
   padding: 1.5rem;
 }
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-purple);
+  background-color: var(--secondary-teal);
   color: var(--white);
   font-size: 2rem;
   border-radius: 50%;
@@ -101,12 +101,12 @@
   margin: 0;
   opacity: 0.9;
   font-size: 1rem;
-  color: var(--secondary-purple);
+  color: var(--white);
 }
 
 .week-indicator {
   margin-top: 1rem;
-  background-color: rgba(131, 135, 196, 0.3);
+  background-color: rgba(49, 203, 175, 0.3);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   display: inline-flex;
@@ -131,7 +131,7 @@
 .metric-card {
   background-color: var(--white);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10, 17, 35, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 142, 156, 0.08);
   padding: 1.25rem;
   display: flex;
   align-items: center;
@@ -141,11 +141,11 @@
 
 .metric-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(10, 17, 35, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 142, 156, 0.12);
 }
 
 .metric-card.primary {
-  background-color: var(--primary-purple);
+  background-color: var(--primary-teal);
   color: var(--white);
 }
 
@@ -155,9 +155,9 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background-color: rgba(131, 135, 196, 0.15);
+  background-color: rgba(0, 142, 156, 0.15);
   border-radius: 10px;
-  color: var(--primary-purple);
+  color: var(--primary-teal);
 }
 
 .metric-card.primary .metric-icon {
@@ -195,7 +195,7 @@
 .attendance-section {
   background-color: var(--white);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(10, 17, 35, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 142, 156, 0.08);
   padding: 1.5rem;
 }
 
@@ -243,13 +243,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(10, 17, 35, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 142, 156, 0.08);
 }
 
 .progress-percentage {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-purple);
+  color: var(--primary-teal);
   transition: all 0.3s ease;
 }
 
@@ -270,23 +270,23 @@
   display: flex;
   flex-direction: column;
   padding: 0.75rem;
-  background-color: rgba(248, 249, 252, 0.8);
+  background-color: rgba(224, 247, 250, 0.5);
   border-radius: 8px;
   text-align: center;
   transition: all 0.2s ease;
 }
 
 .progress-metric:hover {
-  background-color: rgba(248, 249, 252, 1);
-  box-shadow: 0 2px 6px rgba(10, 17, 35, 0.03);
+  background-color: rgba(224, 247, 250, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 142, 156, 0.05);
 }
 
 .progress-metric.highlight {
-  background-color: rgba(131, 135, 196, 0.1);
+  background-color: rgba(0, 142, 156, 0.1);
 }
 
 .progress-metric.highlight:hover {
-  background-color: rgba(131, 135, 196, 0.15);
+  background-color: rgba(0, 142, 156, 0.15);
 }
 
 .progress-metric .label {
@@ -303,7 +303,7 @@
 }
 
 .progress-metric.highlight .value {
-  color: var(--primary-purple);
+  color: var(--primary-teal);
 }
 
 /* Attendance Table */
@@ -318,7 +318,7 @@
 }
 
 .attendance-table thead th {
-  background-color: rgba(248, 249, 252);
+  background-color: rgba(224, 247, 250, 0.6);
   padding: 0.75rem 1rem;
   font-weight: 500;
   font-size: 0.75rem;
@@ -346,7 +346,7 @@
 }
 
 .attendance-table tbody tr:hover {
-  background-color: rgba(248, 249, 252, 0.8);
+  background-color: rgba(224, 247, 250, 0.3);
 }
 
 .attendance-table .missing-time {
@@ -355,7 +355,7 @@
 }
 
 .inactive-row {
-  background-color: rgba(248, 249, 252, 0.4);
+  background-color: rgba(224, 247, 250, 0.2);
   color: var(--text-muted);
 }
 

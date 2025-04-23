@@ -136,7 +136,7 @@ function TeacherTimeTracking() {
                 <div 
                   className="progress-circle" 
                   style={{
-                    background: `conic-gradient(#8387C4 ${progressMetrics.percentDone * 3.6}deg, rgba(131, 135, 196, 0.2) 0deg)`
+                    background: `conic-gradient(#008E9C ${progressMetrics.percentDone * 3.6}deg, rgba(0, 142, 156, 0.2) 0deg)`
                   }}
                 >
                   <div className="progress-circle-inner">
