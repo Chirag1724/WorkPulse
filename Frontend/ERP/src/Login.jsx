@@ -116,10 +116,6 @@ function FacultyLogin() {
             </div>
           </form>
           
-<<<<<<< HEAD
-          
-=======
->>>>>>> c4e2708ecb443fc69707f25515a6543e340201df
           <div className="social-login">
             <p>Or With</p>
             <div className="social-buttons">
