@@ -91,7 +91,6 @@ function Dashboard() {
                   src="https://megaphone.southwestern.edu/wp-content/uploads/2018/03/birger-kollmeier-910261_960_720.jpg"
                   alt="Profile"
                 />
-                <div className="status-indicator online" />
               </div>
               <div className="welcome-text">
                 <h2>{greeting}, Prof. M.M. Sati!</h2>
