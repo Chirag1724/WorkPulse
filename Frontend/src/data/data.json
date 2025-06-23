@@ -1,46 +1,110 @@
 {
-    "weekly": [
-      { "day": "Mon", "hours": 6 },
-      { "day": "Tue", "hours": 8 },
-      { "day": "Wed", "hours": 7 },
-      { "day": "Thu", "hours": 9 },
-      { "day": "Fri", "hours": 5 },
-      { "day": "Sat", "hours": 4 },
-      { "day": "Sun", "hours": 0 }
-    ],
-    "monthly": [
-      { "month": "January", "required": 160, "actual": 165 },
-      { "month": "February", "required": 152, "actual": 148 },
-      { "month": "March", "required": 168, "actual": 172 },
-      { "month": "April", "required": 160, "actual": 155 },
-      { "month": "May", "required": 168, "actual": 175 },
-      { "month": "June", "required": 152, "actual": 158 },
-      { "month": "July", "required": 128, "actual": 110 },
-      { "month": "August", "required": 136, "actual": 142 },
-      { "month": "September", "required": 160, "actual": 168 },
-      { "month": "October", "required": 168, "actual": 170 },
-      { "month": "November", "required": 152, "actual": 145 },
-      { "month": "December", "required": 144, "actual": 150 }
-    ],
-    "teacherStats": {
-      "name": "Prof. M.M. Sati",
-      "subject": "Mathematics",
-      "avatar": "👨‍🏫",
-      "weeklyStats": {
-        "logged": 27.5,
-        "weeklyRequirement": 30,
-        "pending": 12.5,
-        "workingDays": 5,
-        "punchData": [
-          { "day": "Monday", "in": "07:45", "out": "15:30", "classes": 5 },
-          { "day": "Tuesday", "in": "10:00", "out": "16:15", "classes": 4 },
-          { "day": "Wednesday", "in": "07:30", "out": "15:45", "classes": 6 },
-          { "day": "Thursday", "in": "", "out": "", "classes": 5 },
-          { "day": "Friday", "in": "", "out": "", "classes": 4 }
-        ]
-      }
+  "teacherStats": {
+    "name": "Prof. M.M. Sati",
+    "subject": "Advanced Mathematics",
+    "department": "Mathematics Department",
+    "employeeId": "FAC-2024-125",
+    "avatar": "https://megaphone.southwestern.edu/wp-content/uploads/2018/03/birger-kollmeier-910261_960_720.jpg",
+    "performance": {
+      "rating": 4.7,
+      "totalStudents": 180,
+      "coursesTeaching": 5,
+      "yearsExperience": 15
+    },
+    "weeklyStats": {
+      "logged": 35.0,
+      "weeklyRequirement": 40,
+      "overtime": 0,
+      "workingDays": 5,
+      "averageDaily": 7.0,
+      "punchData": [
+        {
+          "day": "Monday",
+          "in": "07:45",
+          "out": "15:30",
+          "classes": 5,
+          "hours": 7.75,
+          "status": "completed"
+        },
+        {
+          "day": "Tuesday",
+          "in": "10:00",
+          "out": "16:15",
+          "classes": 4,
+          "hours": 6.25,
+          "status": "completed"
+        },
+        {
+          "day": "Wednesday",
+          "in": "07:30",
+          "out": "15:45",
+          "classes": 6,
+          "hours": 8.25,
+          "status": "completed"
+        },
+        {
+          "day": "Thursday",
+          "in": "08:00",
+          "out": "16:30",
+          "classes": 5,
+          "hours": 8.5,
+          "status": "completed"
+        },
+        {
+          "day": "Friday",
+          "in": "08:15",
+          "out": "12:30",
+          "classes": 4,
+          "hours": 4.25,
+          "status": "completed"
+        }
+      ],
+      "monthlyTrend": [
+        { "week": "Week 1", "hours": 38.5 },
+        { "week": "Week 2", "hours": 40.0 },
+        { "week": "Week 3", "hours": 37.0 },
+        { "week": "Week 4", "hours": 35.0 }
+      ]
+    }
+  },
+  "weekly": [
+    { "day": "Mon", "hours": 7.75 },
+    { "day": "Tue", "hours": 6.25 },
+    { "day": "Wed", "hours": 8.25 },
+    { "day": "Thu", "hours": 8.5 },
+    { "day": "Fri", "hours": 4.25 },
+    { "day": "Sat", "hours": 0 },
+    { "day": "Sun", "hours": 0 }
+  ],
+  "monthly": [
+    { "month": "January", "required": 160, "actual": 165 },
+    { "month": "February", "required": 152, "actual": 148 },
+    { "month": "March", "required": 168, "actual": 172 },
+    { "month": "April", "required": 160, "actual": 155 },
+    { "month": "May", "required": 168, "actual": 175 },
+    { "month": "June", "required": 152, "actual": 158 },
+    { "month": "July", "required": 128, "actual": 110 },
+    { "month": "August", "required": 136, "actual": 142 },
+    { "month": "September", "required": 160, "actual": 168 },
+    { "month": "October", "required": 168, "actual": 170 },
+    { "month": "November", "required": 152, "actual": 145 },
+    { "month": "December", "required": 144, "actual": 150 }
+  ],
+  "additionalMetrics": {
+    "studentFeedback": {
+      "averageRating": 4.7,
+      "totalResponses": 156,
+      "positivePercentage": 94
+    },
+    "professionalDevelopment": {
+      "coursesCompleted": 8,
+      "certificationsEarned": 3,
+      "conferencesAttended": 5
+    },
+    "researchActivities": {
+      "papersPublished": 12,
+      "projectsActive": 2,
+      "grantsReceived": 3
     }
   }
-
-
-  
+}

@@ -120,15 +120,15 @@ function TeacherSchedule() {
   };
 
   const getActivityColor = (activity) => {
-    if (activity.includes('Teaching')) return 'bg-teal-50 border-l-4 border-teal-500';
-    if (activity.includes('Break') || activity.includes('Lunch')) return 'bg-emerald-50 border-l-4 border-emerald-500';
-    if (activity.includes('Meeting') || activity.includes('Conference')) return 'bg-slate-50 border-l-4 border-slate-500';
-    if (activity.includes('Office') || activity.includes('Hours')) return 'bg-cyan-50 border-l-4 border-cyan-500';
-    if (activity.includes('Planning') || activity.includes('Development')) return 'bg-blue-50 border-l-4 border-blue-500';
-    if (activity.includes('Grading')) return 'bg-green-50 border-l-4 border-green-500';
-    if (activity.includes('Preparation')) return 'bg-indigo-50 border-l-4 border-indigo-500';
-    if (activity.includes('Club')) return 'bg-purple-50 border-l-4 border-purple-500';
-    return 'bg-gray-50 border-l-4 border-gray-400';
+    if (activity.includes('Teaching')) return 'bg-white border-l-4 border-teal-500';
+    if (activity.includes('Break') || activity.includes('Lunch')) return 'bg-cyan-50 border-l-4 border-emerald-600';
+    if (activity.includes('Meeting') || activity.includes('Conference')) return 'bg-white border-l-4 border-slate-500';
+    if (activity.includes('Office') || activity.includes('Hours')) return 'bg-cyan-50 border-l-4 border-teal-600';
+    if (activity.includes('Planning') || activity.includes('Development')) return 'bg-white border-l-4 border-blue-500';
+    if (activity.includes('Grading')) return 'bg-cyan-50 border-l-4 border-green-500';
+    if (activity.includes('Preparation')) return 'bg-white border-l-4 border-teal-600';
+    if (activity.includes('Club')) return 'bg-cyan-50 border-l-4 border-purple-500';
+    return 'bg-white border-l-4 border-gray-400';
   };
 
   const isCurrentTimeSlot = (timeString) => {
@@ -183,16 +183,16 @@ function TeacherSchedule() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 bg-gradient-to-br from-cyan-50 via-teal-50 to-emerald-50 min-h-screen">
-      <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-6 lg:p-8 border border-white/20">
+    <div className="max-w-7xl mx-auto p-4 bg-cyan-50 min-h-screen">
+      <div className="bg-white rounded-lg shadow-xl p-6 lg:p-8 border border-teal-100">
         
-        {/* Enhanced Header Navbar */}
-        <div className="bg-teal-700 rounded-xl shadow-lg p-5 mb-6">
+        {/* Professional Header Navbar */}
+        <div className="bg-gradient-to-r from-teal-900 to-teal-600 rounded-lg shadow-lg p-5 mb-6">
           <div className="flex justify-between items-center">
             {/* Left side with greeting and back button */}
             <div className="flex items-center">
               <div 
-                className="w-12 h-12 rounded-full overflow-hidden mr-4 border-3 border-teal-300 cursor-pointer hover:border-teal-200 transition-colors"
+                className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-white/20 cursor-pointer hover:border-white/40 transition-all duration-200"
                 onClick={handleBackClick}
                 title="Back to Dashboard"
               >
@@ -205,7 +205,7 @@ function TeacherSchedule() {
               
               <div className="flex flex-col">
                 <h1 className="text-xl font-semibold text-white mb-1">{getGreeting()}, Prof. M.M. Sati!</h1>
-                <p className="text-sm text-teal-100">Have a productive day!</p>
+                <p className="text-sm text-white/80">Have a productive day!</p>
               </div>
             </div>
             
@@ -215,42 +215,42 @@ function TeacherSchedule() {
               <div className="relative" ref={notificationRef}>
                 <button 
                   onClick={() => setShowNotifications(!showNotifications)}
-                  className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition-all duration-200 backdrop-blur-sm border border-teal-300/30 relative"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all duration-200 border border-white/20 relative"
                 >
                   <Bell size={18} className="text-white" />
-                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-teal-600 text-white text-xs rounded-full flex items-center justify-center font-semibold">3</span>
                 </button>
                 
                 {showNotifications && (
-                  <div className="absolute top-12 right-0 bg-white/95 backdrop-blur-md rounded-xl shadow-xl w-80 overflow-hidden z-20 border border-white/20">
-                    <div className="p-4 bg-gradient-to-r from-teal-50 to-emerald-50 border-b border-teal-100">
+                  <div className="absolute top-12 right-0 bg-white rounded-lg shadow-xl w-80 overflow-hidden z-20 border border-teal-100">
+                    <div className="p-4 bg-cyan-50 border-b border-teal-100">
                       <h3 className="font-semibold text-teal-900">Notifications</h3>
                     </div>
                     <div className="max-h-64 overflow-y-auto">
-                      <div className="p-3 hover:bg-teal-50 border-b border-gray-100 cursor-pointer">
+                      <div className="p-3 hover:bg-cyan-50 border-b border-gray-100 cursor-pointer transition-colors">
                         <div className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                          <div className="w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
                           <div>
-                            <p className="text-sm font-medium text-gray-800">Department Meeting Reminder</p>
-                            <p className="text-xs text-gray-600">Science dept meeting at 12:00 PM today</p>
+                            <p className="text-sm font-medium text-teal-900">Department Meeting Reminder</p>
+                            <p className="text-xs text-slate-600">Science dept meeting at 12:00 PM today</p>
                           </div>
                         </div>
                       </div>
-                      <div className="p-3 hover:bg-teal-50 border-b border-gray-100 cursor-pointer">
+                      <div className="p-3 hover:bg-cyan-50 border-b border-gray-100 cursor-pointer transition-colors">
                         <div className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                          <div className="w-2 h-2 bg-teal-500 rounded-full mt-2"></div>
                           <div>
-                            <p className="text-sm font-medium text-gray-800">New Assignment Submissions</p>
-                            <p className="text-xs text-gray-600">5 new submissions for Physics Assignment 3</p>
+                            <p className="text-sm font-medium text-teal-900">New Assignment Submissions</p>
+                            <p className="text-xs text-slate-600">5 new submissions for Physics Assignment 3</p>
                           </div>
                         </div>
                       </div>
-                      <div className="p-3 hover:bg-teal-50 cursor-pointer">
+                      <div className="p-3 hover:bg-cyan-50 cursor-pointer transition-colors">
                         <div className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                          <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
                           <div>
-                            <p className="text-sm font-medium text-gray-800">Parent Conference Scheduled</p>
-                            <p className="text-xs text-gray-600">Meeting with John's parents tomorrow at 3 PM</p>
+                            <p className="text-sm font-medium text-teal-900">Parent Conference Scheduled</p>
+                            <p className="text-xs text-slate-600">Meeting with John's parents tomorrow at 3 PM</p>
                           </div>
                         </div>
                       </div>
@@ -263,7 +263,7 @@ function TeacherSchedule() {
               <div className="relative" ref={profileMenuRef}>
                 <button 
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="w-10 h-10 rounded-full overflow-hidden border-2 border-teal-300 cursor-pointer hover:border-teal-200 transition-colors"
+                  className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20 cursor-pointer hover:border-white/40 transition-all duration-200"
                 >
                   <img 
                     src="https://megaphone.southwestern.edu/wp-content/uploads/2018/03/birger-kollmeier-910261_960_720.jpg" 
@@ -273,15 +273,15 @@ function TeacherSchedule() {
                 </button>
                 
                 {showProfileMenu && (
-                  <div className="absolute top-12 right-0 bg-white/95 backdrop-blur-md rounded-xl shadow-xl w-48 overflow-hidden z-20 border border-white/20">
-                    <div className="p-4 bg-gradient-to-r from-teal-50 to-emerald-50 border-b border-teal-100">
+                  <div className="absolute top-12 right-0 bg-white rounded-lg shadow-xl w-48 overflow-hidden z-20 border border-teal-100">
+                    <div className="p-4 bg-cyan-50 border-b border-teal-100">
                       <div className="font-semibold text-teal-900">Prof. M.M. Sati</div>
                     </div>
                     <button 
                       onClick={handleEditProfile}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-teal-50 w-full text-left transition-colors border-none bg-transparent cursor-pointer"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-teal-50 w-full text-left transition-colors border-none bg-transparent cursor-pointer text-slate-600"
                     >
-                      <Edit size={16} className="text-teal-700" />
+                      <Edit size={16} className="text-teal-600" />
                       <span className="text-sm">Edit Profile</span>
                     </button>
                     <div className="border-t border-gray-100">
@@ -303,36 +303,36 @@ function TeacherSchedule() {
         {/* Dashboard Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-6">
           <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-teal-800 to-emerald-800 bg-clip-text text-transparent mb-2">
-              Teacher Dashboard
+            <h1 className="text-4xl font-bold text-teal-900 mb-2">
+              Teacher Schedule
             </h1>
             <p className="text-slate-600 text-lg flex items-center gap-2">
-              <Calendar size={18} />
+              <Calendar size={18} className="text-teal-600" />
               {currentDate}
             </p>
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-3 shadow-lg border border-white/30">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center shadow-md">
+            <div className="bg-white rounded-lg p-4 flex items-center gap-3 shadow-md border border-teal-100">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-teal-500 to-teal-600 flex items-center justify-center shadow-sm">
                 <BookOpen size={20} className="text-white" />
               </div>
               <div>
-                <div className="text-xs text-slate-500 mb-1 font-medium">Teaching Hours</div>
-                <div className="text-2xl font-bold text-slate-800">
+                <div className="text-xs text-gray-400 mb-1 font-medium uppercase tracking-wide">Teaching Hours</div>
+                <div className="text-2xl font-bold text-teal-900">
                   {currentDayStats.teachingHours}
-                  <span className="text-sm text-slate-500 ml-1 font-normal">hrs</span>
+                  <span className="text-sm text-slate-600 ml-1 font-normal">hrs</span>
                 </div>
               </div>
             </div>
             
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-3 shadow-lg border border-white/30">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center shadow-md">
+            <div className="bg-white rounded-lg p-4 flex items-center gap-3 shadow-md border border-teal-100">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-slate-500 to-slate-600 flex items-center justify-center shadow-sm">
                 <Users size={20} className="text-white" />
               </div>
               <div>
-                <div className="text-xs text-slate-500 mb-1 font-medium">Meetings</div>
-                <div className="text-2xl font-bold text-slate-800">{currentDayStats.meetings}</div>
+                <div className="text-xs text-gray-400 mb-1 font-medium uppercase tracking-wide">Meetings</div>
+                <div className="text-2xl font-bold text-teal-900">{currentDayStats.meetings}</div>
               </div>
             </div>
           </div>
@@ -340,15 +340,15 @@ function TeacherSchedule() {
         
         {/* Day Navigation */}
         <div className="mb-8">
-          <div className="flex gap-3 flex-wrap p-2 bg-white/50 rounded-2xl backdrop-blur-sm border border-white/30">
+          <div className="flex gap-2 flex-wrap p-2 bg-cyan-50 rounded-lg border border-teal-100">
             {days.map(day => (
               <button
                 key={day}
                 onClick={() => setCurrentDay(day)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-200 ${
+                className={`px-6 py-3 rounded-md font-semibold transition-all duration-200 ${
                   currentDay === day 
-                    ? 'bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transform scale-105' 
-                    : 'bg-white/60 text-slate-700 hover:bg-white/80 backdrop-blur-sm border border-white/50 hover:scale-105'
+                    ? 'bg-teal-600 text-white shadow-md' 
+                    : 'bg-white text-slate-600 hover:bg-teal-50 hover:text-teal-900 border border-teal-100'
                 }`}
               >
                 {day}
@@ -358,28 +358,28 @@ function TeacherSchedule() {
         </div>
         
         {/* Schedule Content */}
-        <div className="space-y-4 mb-8">
+        <div className="space-y-3 mb-8">
           {scheduleData[currentDay].map((item, index) => {
             const isActive = isCurrentTimeSlot(item.time);
             
             return (
               <div 
                 key={index} 
-                className={`${getActivityColor(item.activity)} bg-white/80 backdrop-blur-sm rounded-2xl p-5 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-white/30 ${
-                  isActive ? 'ring-2 ring-teal-400 shadow-2xl scale-105' : 'shadow-lg'
+                className={`${getActivityColor(item.activity)} rounded-lg p-5 transition-all duration-200 hover:shadow-md border ${
+                  isActive ? 'ring-2 ring-teal-500 shadow-lg bg-teal-50' : 'shadow-sm'
                 }`}
               >
                 <div className="flex items-center gap-5">
-                  <div className="w-28 text-sm font-bold text-slate-700 flex-shrink-0 bg-white/60 rounded-lg p-2 text-center backdrop-blur-sm">
+                  <div className="w-32 text-sm font-bold text-teal-900 flex-shrink-0 bg-cyan-50 rounded-md p-2 text-center border border-teal-100">
                     {item.time}
                   </div>
                   
                   <div className="flex items-center gap-4 flex-1">
-                    <div className="w-12 h-12 flex items-center justify-center text-2xl bg-white/60 rounded-xl backdrop-blur-sm">
+                    <div className="w-12 h-12 flex items-center justify-center text-2xl bg-cyan-50 rounded-lg border border-teal-100">
                       {getActivityIcon(item.activity)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-bold text-slate-800 text-lg mb-1">{item.activity}</div>
+                      <div className="font-bold text-teal-900 text-lg mb-1">{item.activity}</div>
                       <div className="flex items-center gap-4 text-sm text-slate-600">
                         <span className="flex items-center gap-1">
                           <span>📍</span>
@@ -400,9 +400,9 @@ function TeacherSchedule() {
                   </div>
                   
                   {isActive && (
-                    <div className="flex items-center gap-2 bg-gradient-to-r from-teal-100 to-emerald-100 px-3 py-1 rounded-full">
-                      <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-                      <span className="text-teal-700 text-xs font-semibold">Active</span>
+                    <div className="flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 px-3 py-1 rounded-full">
+                      <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                      <span className="text-white text-xs font-semibold">Active</span>
                     </div>
                   )}
                 </div>
@@ -412,7 +412,7 @@ function TeacherSchedule() {
         </div>
         
         {/* Weekly Overview */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/30 mb-8">
+        <div className="bg-white rounded-lg p-6 shadow-md border border-teal-100 mb-8">
           <h3 className="text-2xl font-bold text-teal-900 mb-6 flex items-center gap-2">
             <span>📊</span>
             Weekly Overview
@@ -425,23 +425,23 @@ function TeacherSchedule() {
               return (
                 <div 
                   key={day}
-                  className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
+                  className={`p-4 rounded-lg border transition-all duration-200 cursor-pointer ${
                     isCurrentDay 
-                      ? 'bg-gradient-to-br from-teal-100 to-emerald-100 border-teal-300 shadow-lg' 
-                      : 'bg-white/60 border-white/40 hover:bg-white/80 hover:shadow-md'
+                      ? 'bg-teal-50 border-teal-500 shadow-md' 
+                      : 'bg-white border-teal-100 hover:bg-cyan-50 hover:shadow-sm'
                   }`}
                   onClick={() => setCurrentDay(day)}
                 >
                   <div className="text-center">
-                    <div className={`font-bold mb-2 ${isCurrentDay ? 'text-teal-800' : 'text-slate-700'}`}>
+                    <div className={`font-bold mb-2 ${isCurrentDay ? 'text-teal-900' : 'text-slate-600'}`}>
                       {day}
                     </div>
                     <div className="space-y-2 text-sm">
-                      <div className={`flex justify-between ${isCurrentDay ? 'text-teal-700' : 'text-slate-600'}`}>
+                      <div className={`flex justify-between ${isCurrentDay ? 'text-teal-900' : 'text-slate-600'}`}>
                         <span>Teaching:</span>
                         <span className="font-semibold">{dayStats.teachingHours}h</span>
                       </div>
-                      <div className={`flex justify-between ${isCurrentDay ? 'text-teal-700' : 'text-slate-600'}`}>
+                      <div className={`flex justify-between ${isCurrentDay ? 'text-teal-900' : 'text-slate-600'}`}>
                         <span>Meetings:</span>
                         <span className="font-semibold">{dayStats.meetings}</span>
                       </div>

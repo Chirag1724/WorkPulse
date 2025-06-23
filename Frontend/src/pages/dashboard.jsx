@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { Edit, LogOut, Bell } from 'lucide-react';
 
 function Dashboard() {
   const navigate = useNavigate();
   const [punchedIn, setPunchedIn] = useState(false);
   const [progress, setProgress] = useState(60);
   const [greeting, setGreeting] = useState('');
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const profileMenuRef = useRef(null);
+  const notificationRef = useRef(null);
 
   useEffect(() => {
     // Set appropriate greeting based on time of day
@@ -14,6 +18,20 @@ function Dashboard() {
     if (hour < 12) setGreeting('Good Morning');
     else if (hour < 17) setGreeting('Good Afternoon');
     else setGreeting('Good Evening');
+  }, []);
+
+  // Handle clicks outside menus
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) {
+        setShowProfileMenu(false);
+      }
+      if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+        setShowNotifications(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const handlePunch = () => {
@@ -35,6 +53,16 @@ function Dashboard() {
 
   const punchIn = () => {
     navigate('/punch-in');
+  };
+
+  const handleEditProfile = () => {
+    alert("Edit profile functionality would open here");
+    setShowProfileMenu(false);
+  };
+
+  const handleLogout = () => {
+    window.location.href = "/";
+    setShowProfileMenu(false);
   };
 
   // Calendar generation logic
@@ -151,13 +179,95 @@ function Dashboard() {
           {/* Header */}
           <div className="flex justify-between items-center p-5 bg-white shadow-sm sticky top-0 z-50">
             <h1 className="text-2xl font-semibold text-teal-900">Faculty Dashboard</h1>
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
               <div className="mr-5 text-sm text-slate-600">
                 {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
               </div>
-              <div className="relative cursor-pointer">
-                <span className="text-2xl text-slate-600">🔔</span>
-                <span className="absolute -top-1 -right-1 bg-teal-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs">3</span>
+              
+              {/* Notifications */}
+              <div className="relative" ref={notificationRef}>
+                <button 
+                  onClick={() => setShowNotifications(!showNotifications)}
+                  className="relative cursor-pointer w-10 h-10 bg-transparent border-none flex items-center justify-center rounded-lg hover:bg-gray-100 transition-all duration-200"
+                >
+                  <Bell size={20} className="text-slate-600" />
+                  <span className="absolute -top-1 -right-1 bg-teal-600 text-white w-5 h-5 flex items-center justify-center rounded-full text-xs">3</span>
+                </button>
+                
+                {showNotifications && (
+                  <div className="absolute top-12 right-0 bg-white rounded-lg shadow-xl w-80 overflow-hidden z-20 border border-teal-100">
+                    <div className="p-4 bg-cyan-50 border-b border-teal-100">
+                      <h3 className="font-semibold text-teal-900">Notifications</h3>
+                    </div>
+                    <div className="max-h-64 overflow-y-auto">
+                      <div className="p-3 hover:bg-cyan-50 border-b border-gray-100 cursor-pointer transition-colors">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-teal-600 rounded-full mt-2"></div>
+                          <div>
+                            <p className="text-sm font-medium text-teal-900">Department Meeting Reminder</p>
+                            <p className="text-xs text-slate-600">Science dept meeting at 12:00 PM today</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-3 hover:bg-cyan-50 border-b border-gray-100 cursor-pointer transition-colors">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-teal-500 rounded-full mt-2"></div>
+                          <div>
+                            <p className="text-sm font-medium text-teal-900">New Assignment Submissions</p>
+                            <p className="text-xs text-slate-600">5 new submissions for Physics Assignment 3</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-3 hover:bg-cyan-50 cursor-pointer transition-colors">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2"></div>
+                          <div>
+                            <p className="text-sm font-medium text-teal-900">Parent Conference Scheduled</p>
+                            <p className="text-xs text-slate-600">Meeting with John's parents tomorrow at 3 PM</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Profile Menu */}
+              <div className="relative" ref={profileMenuRef}>
+                <button 
+                  onClick={() => setShowProfileMenu(!showProfileMenu)}
+                  className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-200 cursor-pointer hover:border-teal-300 transition-all duration-200"
+                >
+                  <img 
+                    src="https://megaphone.southwestern.edu/wp-content/uploads/2018/03/birger-kollmeier-910261_960_720.jpg" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+                
+                {showProfileMenu && (
+                  <div className="absolute top-12 right-0 bg-white rounded-lg shadow-xl w-48 overflow-hidden z-20 border border-teal-100">
+                    <div className="p-4 bg-cyan-50 border-b border-teal-100">
+                      <div className="font-semibold text-teal-900">Prof. M.M. Sati</div>
+                    </div>
+                    <button 
+                      onClick={handleEditProfile}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-teal-50 w-full text-left transition-colors border-none bg-transparent cursor-pointer text-slate-600"
+                    >
+                      <Edit size={16} className="text-teal-600" />
+                      <span className="text-sm">Edit Profile</span>
+                    </button>
+                    <div className="border-t border-gray-100">
+                      <button 
+                        onClick={handleLogout}
+                        className="flex items-center gap-3 px-4 py-3 hover:bg-red-50 w-full text-left transition-colors text-red-600 border-none bg-transparent cursor-pointer"
+                      >
+                        <LogOut size={16} />
+                        <span className="text-sm">Logout</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -364,4 +474,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;      
+export default Dashboard;
