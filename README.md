@@ -52,7 +52,7 @@ Before running this project, ensure you have the following installed:
 1. **Clone the repository**:
 ```bash
 git clone https://github.com/Chirag1724/WorkPulse.git
-cd WorkPulse
+cd Frontend
 ```
 
 2. **Install dependencies**:
