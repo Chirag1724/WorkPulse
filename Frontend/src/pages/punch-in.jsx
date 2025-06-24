@@ -190,7 +190,7 @@ export default function WorkPulseApp() {
         
         {/* Confirmation Popup */}
         {showConfirmationPopup && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="fixed inset-0 backdrop-blur-xs bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl w-11/12 max-w-md p-6 shadow-xl">
               <div className="flex items-start mb-4">
                 <div className="mr-4">
